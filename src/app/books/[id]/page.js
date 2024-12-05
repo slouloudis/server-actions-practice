@@ -1,14 +1,9 @@
-import { ActionButton } from "@/components/ActionButton"
-import { deleteBook, singleBookData, updateBook } from "@/utils/db_utils"
-import Form from "@/components/Form"
-import { ModalToggleButton } from "@/components/ModalButton"
+import {singleBookData,} from "@/utils/db_utils"
 
-export default async function Page({params}) {
-    const bookId = (await params).id
 
-    const bookDetails = await singleBookData(bookId)
+export default async function Page() {
 
-    console.log(bookDetails.id)
+    // get a single books details
     return (
         <div className="container mx-auto p-6">
         <div
@@ -45,10 +40,7 @@ export default async function Page({params}) {
             <p className="text-gray-700 italic">Coming soon...</p>
         </div>
         <div>
-            <ActionButton action={deleteBook}>Delete Book</ActionButton>
-            <ModalToggleButton>
-                <Form action={updateBook} bookDetails={bookDetails}/>
-            </ModalToggleButton>
+            <p>delete and edit buttons here</p>
         </div>
     </div>
     )
